@@ -1,14 +1,14 @@
-import React from "react";
-import ExpenseDate from "./ExpenseDate";
-import "./ExpensiveItem.css";
+import React from 'react';
+import ExpenseDate from './ExpenseDate';
+import './ExpensiveItem.css';
 function ExpensiveItem(props) {
   return (
-    <div>
-      <div className="expense-item">
+    <div className='wrapper'>
+      <div className='expense-item'>
         <ExpenseDate date={props.date}></ExpenseDate>
-        <div className="expense-item__description">
+        <div className='expense-item__description'>
           <h2>{props.title}</h2>
-          <div className="expense-item__price">${props.amount}</div>
+          <div className='expense-item__price'>${props.amount}</div>
         </div>
       </div>
     </div>

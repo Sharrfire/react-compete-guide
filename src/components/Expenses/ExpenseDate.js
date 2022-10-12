@@ -13,5 +13,6 @@ function ExpenseDate(props) {
     </div>
   );
 }
+import PropTypes from 'prop-types';
 
 export default ExpenseDate;

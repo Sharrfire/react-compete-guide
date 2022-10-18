@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './ExpensesFilter.css';
+import './css/ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
   const handleDropDownChange = (e) => {

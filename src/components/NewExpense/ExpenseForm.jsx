@@ -10,31 +10,23 @@ function ExpenseForm(saveExpenseData) {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
-  // const [input, setInput] = useState({
-  //   inputTitle: '',
-  //   inputAmount: '',
-  //   inputDate: '',
-  // });
+
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
-    // setInput((prevState) => {
-    //   return { ...prevState, inputTitle: e.target.value };
-    // });
   };
   const handleChangeAmount = (e) => {
     setAmount(e.target.value);
-    // return { ...prevState, inputAmount: e.target.value };
   };
   const handleChangeDate = (e) => {
     setDate(e.target.value);
-    // return { ...prevState, inputDate: e.target.value };
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const expenseData = {
-      title,
-      amount,
-      date: new Date(date),
+      title: enteredTitle,
+      amount: +enteredAmount,
+      date: new Date(enteredDate),
     };
     saveExpenseData.onSaveExpenseData(expenseData);
     setTitle('');

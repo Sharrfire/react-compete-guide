@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import AddUser from './Users/AddUser';
 import './css/UserSection.css';
+import AddUser from './Users/AddUser';
 import UserList from './Users/UserList';
 UserSection.propTypes = {};
 
@@ -13,11 +12,11 @@ function UserSection(props) {
     });
   };
   return (
-    <div>
+    <>
       <AddUser onAddUser={handleAddUser} />
       {/* <AddUser /> */}
       <UserList users={userList} />
-    </div>
+    </>
   );
 }
 

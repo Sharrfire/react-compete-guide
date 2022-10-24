@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Login from './Login/Login';
 import MainHeader from './MainHeader/MainHeader';
 import Home from './Home/Home';
+import AuthContext from '../store/auth-context';
 AuthenSection.propTypes = {};
 
 function AuthenSection(props) {
@@ -25,13 +26,19 @@ function AuthenSection(props) {
   };
 
   return (
-    <React.Fragment>
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
-      <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
-      </main>
-    </React.Fragment>
+    <>
+      <AuthContext.Provider
+        value={{
+          isLoggedIn: isLoggedIn,
+        }}
+      >
+        <MainHeader onLogout={logoutHandler} />
+        <main>
+          {!isLoggedIn && <Login onLogin={loginHandler} />}
+          {isLoggedIn && <Home onLogout={logoutHandler} />}
+        </main>
+      </AuthContext.Provider>
+    </>
   );
 }
 

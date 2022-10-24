@@ -17,7 +17,7 @@ const emailReducer = (state, actions) => {
 
 const passwordReducer = (state, actions) => {
   if (actions.type === 'USER_INPUT') {
-    return { value: actions.val, isValid: actions.trim().length > 6 };
+    return { value: actions.val, isValid: actions.val.trim().length > 6 };
   }
   if (actions.type === 'INPUT_BLUR') {
     return { value: state.value, isValid: state.value.trim().length > 6 };
@@ -45,7 +45,7 @@ function Login(props) {
       console.log('Clean up');
       clearTimeout(identifier);
     };
-  }, [emailIsValid, passwordIsValid]);
+  }, [emailState, passwordState]);
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: 'USER_INPUT', val: event.target.value });
@@ -53,7 +53,7 @@ function Login(props) {
   };
 
   const passwordChangeHandler = (event) => {
-    dispatchEmail({ type: 'USER_INPUT', val: event.target.value });
+    dispatchPassword({ type: 'USER_INPUT', val: event.target.value });
 
     // setFormIsValid(event.target.value.trim().length > 6 && emailState.isValid);
   };

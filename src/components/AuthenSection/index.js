@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
+import AuthContext from '../../store/auth-context';
 
+import Home from './Home/Home';
 import Login from './Login/Login';
 import MainHeader from './MainHeader/MainHeader';
-import Home from './Home/Home';
-import AuthContext from '../store/auth-context';
 AuthenSection.propTypes = {};
 
 function AuthenSection(props) {

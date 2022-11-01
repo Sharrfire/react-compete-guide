@@ -6,6 +6,7 @@ import CourseGoalsSection from '../components/CourseGoalsSection';
 import ExpenseSection from '../components/ExpensesSection';
 import FoodOrderSection from '../components/FoodOrderSection';
 import MovieSection from '../components/MovieSection';
+import FormSection from '../components/FormSection';
 
 const publicRoutes = [
   { name: 'authen', path: config.routes.authen, component: AuthenSection },
@@ -14,6 +15,7 @@ const publicRoutes = [
   { name: 'food', path: config.routes.food, component: FoodOrderSection },
   { name: 'user', path: config.routes.user, component: UserSection },
   { name: 'movie', path: config.routes.movie, component: MovieSection },
+  { name: 'form', path: config.routes.form, component: FormSection },
 ];
 
 const privateRoutes = [];

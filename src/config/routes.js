@@ -3,11 +3,9 @@ const routes = {
   food: '/food',
   expense: '/expense',
   course: '/course',
-  extra: '/extra',
-  user: '/user',
-  authen: '/authen',
   movie: '/movie',
-  form: '/form',
+  authen: '/authen',
+  user: '/user',
 };
 
 export default routes;

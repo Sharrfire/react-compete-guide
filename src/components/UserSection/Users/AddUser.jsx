@@ -66,7 +66,6 @@ function AddUser(props) {
       </Card>
     </>
   );
-  s;
 }
 
 export default AddUser;

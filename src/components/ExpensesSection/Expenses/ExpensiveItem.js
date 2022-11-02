@@ -3,7 +3,7 @@ import Card from '../UI/Card';
 import ExpenseDate from './ExpenseDate';
 import './css/ExpensiveItem.css';
 function ExpensiveItem(props) {
-  // const [title, setTitle] = useState(props.title);
+  const [title, setTitle] = useState();
   const handleChange = () => {
     setTitle('updated');
     console.log('Change');

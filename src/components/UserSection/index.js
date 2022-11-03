@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './css/UserSection.css';
 import AddUser from './Users/AddUser';
 import UserList from './Users/UserList';
 UserSection.propTypes = {};

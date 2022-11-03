@@ -6,6 +6,7 @@ const routes = {
   movie: '/movie',
   authen: '/authen',
   user: '/user',
+  redux: '/redux',
 };
 
 export default routes;

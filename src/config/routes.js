@@ -7,6 +7,7 @@ const routes = {
   authen: '/authen',
   user: '/user',
   redux: '/redux',
+  reduxAdvance: '/reduxAdvance',
 };
 
 export default routes;

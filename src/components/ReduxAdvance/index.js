@@ -1,26 +1,44 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import './index.css';
+import { useSelector, useDispatch } from 'react-redux';
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
-import { useSelector } from 'react-redux';
-ReduxAdvance.propTypes = {};
+import Notification from './components/UI/Notification ';
+import './index.css';
+import { sendCartData, fetchCartData } from './slice/cartAction';
+import { uiActions } from './slice/ui-slice';
 
-function ReduxAdvance(props) {
+let isInitial = true;
+
+function ReduxAdvance() {
+  const dispatch = useDispatch();
   const showCart = useSelector((state) => state.ui.cartIsVisible);
   const cart = useSelector((state) => state.cart);
+  const notification = useSelector((state) => state.ui.notification);
   useEffect(() => {
-    fetch('https://gamingshopproj-default-rtdb.firebaseio.com/cart.json', {
-      method: 'PUT',
-      body: JSON.stringify(cart),
-    });
-  }, [cart]);
+    dispatch(fetchCartData());
+  }, [dispatch]);
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
+  }, [cart, dispatch]);
+
   return (
-    <Layout>
-      {showCart && <Cart />}
-      <Products />
-    </Layout>
+    <>
+      <Layout>
+        {notification && (
+          <Notification status={notification.status} title={notification.title} message={notification.message} />
+        )}
+        {showCart && <Cart />}
+        <Products />
+      </Layout>
+    </>
   );
 }
 

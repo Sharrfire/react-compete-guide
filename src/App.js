@@ -9,8 +9,7 @@ function App() {
         {publicRoutes.map((route, index) => {
           // const Layout = route.layout || Fragment;
           const Page = route.component;
-
-          return <Route key={index} path={route.path} element={<Page />} />;
+          return <Route key={index} path={`${route.path}`} element={<Page />} />;
         })}
       </Routes>
       <ul style={{ listStyle: 'none', display: 'flex', justifyContent: 'space-around' }}>

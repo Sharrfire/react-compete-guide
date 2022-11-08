@@ -4,9 +4,9 @@ import Home from './Home/Home';
 import Login from './Login/Login';
 import MainHeader from './MainHeader/MainHeader';
 import AuthContext, { AuthContextProvider } from './store/auth-context';
-AuthenSection.propTypes = {};
+LoginSection.propTypes = {};
 
-function AuthenSection(props) {
+function LoginSection(props) {
   const contextData = useContext(AuthContext);
   return (
     <AuthContextProvider>
@@ -19,4 +19,4 @@ function AuthenSection(props) {
   );
 }
 
-export default AuthenSection;
+export default LoginSection;
